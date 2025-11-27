@@ -396,7 +396,7 @@ export default function App() {
           
           <div className="border-t border-gray-700 pt-8 text-center text-gray-400">
             <p className="mb-2">© 2025 TJ Feed and Fisheries. All rights reserved.</p>
-            <p className="text-sm">Website Developed by [Your Name] (SIWES Project)</p>
+            <p className="text-sm">Website Developed by ~mifimn (SIWES Project)</p>
           </div>
         </div>
       </footer>

@@ -14,7 +14,18 @@ import {
   Shield,
   MessageCircle,
   MapPin,
-  Clock
+  Clock,
+  Star,
+  Users,
+  Zap,
+  ThumbsUp,
+  TrendingUp,
+  FileText,
+  Settings,
+  Home,
+  Droplets,
+  Flame,
+  Wind
 } from 'lucide-react';
 import './App.css';
 
@@ -28,6 +39,73 @@ export default function App() {
       setMobileMenuOpen(false);
     }
   };
+
+  const testimonials = [
+    {
+      name: "Sarah Johnson",
+      rating: 5,
+      text: "Fast response time and professional service! They fixed our burst pipe within an hour. Highly recommend!",
+      service: "Emergency Repair"
+    },
+    {
+      name: "Michael Chen",
+      rating: 5,
+      text: "Transparent pricing and excellent workmanship. They installed our new water heater efficiently.",
+      service: "Installation"
+    },
+    {
+      name: "Emily Rodriguez",
+      rating: 5,
+      text: "Found a hidden leak that was costing us hundreds. Very thorough and knowledgeable team.",
+      service: "Leak Detection"
+    },
+    {
+      name: "David Thompson",
+      rating: 5,
+      text: "Available 24/7 as promised. Called them at 2 AM for a flooding issue and they arrived within 30 minutes!",
+      service: "Emergency Service"
+    }
+  ];
+
+  const serviceDetails = [
+    {
+      icon: <Droplets size={28} />,
+      title: "Drain Cleaning",
+      description: "Professional drain cleaning using advanced equipment to clear stubborn clogs."
+    },
+    {
+      icon: <Flame size={28} />,
+      title: "Water Heater Service",
+      description: "Installation, repair, and maintenance of traditional and tankless water heaters."
+    },
+    {
+      icon: <Wind size={28} />,
+      title: "Pipe Repair & Replacement",
+      description: "Expert pipe repair and replacement services for damaged or aging plumbing systems."
+    },
+    {
+      icon: <Home size={28} />,
+      title: "Bathroom Plumbing",
+      description: "Complete bathroom plumbing services including fixture installation and upgrades."
+    },
+    {
+      icon: <Settings size={28} />,
+      title: "Sewer Line Services",
+      description: "Sewer line inspection, cleaning, and repair using camera technology."
+    },
+    {
+      icon: <Droplet size={28} />,
+      title: "Water Filtration",
+      description: "Installation of water filtration and purification systems for clean, safe water."
+    }
+  ];
+
+  const stats = [
+    { number: "10+", label: "Years Experience" },
+    { number: "5000+", label: "Happy Customers" },
+    { number: "24/7", label: "Available" },
+    { number: "100%", label: "Satisfaction" }
+  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -47,11 +125,14 @@ export default function App() {
               <button onClick={() => scrollToSection('home')} className="text-slate-text hover:text-ocean transition">
                 Home
               </button>
+              <button onClick={() => scrollToSection('about')} className="text-slate-text hover:text-ocean transition">
+                About
+              </button>
               <button onClick={() => scrollToSection('services')} className="text-slate-text hover:text-ocean transition">
                 Services
               </button>
-              <button onClick={() => scrollToSection('emergency')} className="text-slate-text hover:text-ocean transition">
-                Emergency
+              <button onClick={() => scrollToSection('testimonials')} className="text-slate-text hover:text-ocean transition">
+                Testimonials
               </button>
               <button onClick={() => scrollToSection('contact')} className="text-slate-text hover:text-ocean transition">
                 Contact
@@ -85,11 +166,14 @@ export default function App() {
                 <button onClick={() => scrollToSection('home')} className="text-left text-slate-text hover:text-ocean transition">
                   Home
                 </button>
+                <button onClick={() => scrollToSection('about')} className="text-left text-slate-text hover:text-ocean transition">
+                  About
+                </button>
                 <button onClick={() => scrollToSection('services')} className="text-left text-slate-text hover:text-ocean transition">
                   Services
                 </button>
-                <button onClick={() => scrollToSection('emergency')} className="text-left text-slate-text hover:text-ocean transition">
-                  Emergency
+                <button onClick={() => scrollToSection('testimonials')} className="text-left text-slate-text hover:text-ocean transition">
+                  Testimonials
                 </button>
                 <button onClick={() => scrollToSection('contact')} className="text-left text-slate-text hover:text-ocean transition">
                   Contact
@@ -158,8 +242,33 @@ export default function App() {
         </div>
       </section>
 
+      {/* Stats Section */}
+      <section className="bg-ocean-dark py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="text-center"
+              >
+                <div className="text-4xl sm:text-5xl font-bold text-cyan mb-2">
+                  {stat.number}
+                </div>
+                <div className="text-lg text-gray-200">
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
-      <section className="py-20 bg-white">
+      <section id="about" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -173,6 +282,9 @@ export default function App() {
               </h2>
               <p className="text-lg text-slate-text mb-6 leading-relaxed">
                 We understand that plumbing issues can be stressful. That's why we offer transparent pricing and respectful service. We treat your home like our own—leaving no mess behind.
+              </p>
+              <p className="text-lg text-slate-text mb-6 leading-relaxed">
+                With over 10 years of experience serving the local community, our team of licensed professionals has seen it all. From simple faucet repairs to complex sewer line replacements, we bring expertise and dedication to every job.
               </p>
               <div className="inline-flex items-center gap-3 bg-cyan text-white px-6 py-3 rounded-lg font-bold text-xl">
                 <CheckCircle size={28} />
@@ -195,7 +307,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Main Services Section */}
       <section id="services" className="py-20 bg-pale-blue">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -204,11 +316,11 @@ export default function App() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-ocean mb-4">Our Services</h2>
+            <h2 className="text-4xl font-bold text-ocean mb-4">Our Core Services</h2>
             <p className="text-xl text-slate-text">Professional plumbing solutions for every need</p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {/* Service Card 1 */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -260,6 +372,38 @@ export default function App() {
               </p>
             </motion.div>
           </div>
+
+          {/* Additional Services Grid */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <h3 className="text-3xl font-bold text-ocean text-center mb-12">Complete Service List</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {serviceDetails.map((service, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition"
+                >
+                  <div className="text-cyan mb-4">
+                    {service.icon}
+                  </div>
+                  <h4 className="text-xl font-bold text-ocean mb-3">
+                    {service.title}
+                  </h4>
+                  <p className="text-slate-text text-sm leading-relaxed">
+                    {service.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -276,7 +420,7 @@ export default function App() {
             <p className="text-xl text-slate-text">Why customers trust us with their homes</p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {/* Feature 1 */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -325,6 +469,268 @@ export default function App() {
               <h3 className="text-2xl font-bold text-ocean mb-4">Clean Up Guarantee</h3>
               <p className="text-slate-text leading-relaxed">
                 We wear shoe covers and leave your home cleaner than we found it.
+              </p>
+            </motion.div>
+
+            {/* Feature 4 */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="bg-pale-blue p-8 rounded-lg shadow-lg text-center"
+            >
+              <div className="w-20 h-20 bg-cyan rounded-full flex items-center justify-center mb-6 mx-auto">
+                <Zap size={40} className="text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-ocean mb-4">Fast Response</h3>
+              <p className="text-slate-text leading-relaxed">
+                Same-day service available. We prioritize emergencies and urgent repairs.
+              </p>
+            </motion.div>
+
+            {/* Feature 5 */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className="bg-pale-blue p-8 rounded-lg shadow-lg text-center"
+            >
+              <div className="w-20 h-20 bg-cyan rounded-full flex items-center justify-center mb-6 mx-auto">
+                <FileText size={40} className="text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-ocean mb-4">Written Warranties</h3>
+              <p className="text-slate-text leading-relaxed">
+                All work comes with written warranties for your peace of mind.
+              </p>
+            </motion.div>
+
+            {/* Feature 6 */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6 }}
+              className="bg-pale-blue p-8 rounded-lg shadow-lg text-center"
+            >
+              <div className="w-20 h-20 bg-cyan rounded-full flex items-center justify-center mb-6 mx-auto">
+                <ThumbsUp size={40} className="text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-ocean mb-4">Quality Materials</h3>
+              <p className="text-slate-text leading-relaxed">
+                We use only top-quality parts and materials for lasting repairs.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="py-20 bg-ocean-dark text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-4">Our Simple Process</h2>
+            <p className="text-xl text-gray-200">From call to completion in four easy steps</p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-center"
+            >
+              <div className="w-20 h-20 bg-cyan rounded-full flex items-center justify-center mb-6 mx-auto text-3xl font-bold">
+                1
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Call Us</h3>
+              <p className="text-gray-200">
+                Reach out 24/7 and speak with a real person who cares about your plumbing emergency.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-center"
+            >
+              <div className="w-20 h-20 bg-cyan rounded-full flex items-center justify-center mb-6 mx-auto text-3xl font-bold">
+                2
+              </div>
+              <h3 className="text-2xl font-bold mb-4">We Arrive</h3>
+              <p className="text-gray-200">
+                Our licensed plumber arrives promptly with all necessary tools and equipment.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="text-center"
+            >
+              <div className="w-20 h-20 bg-cyan rounded-full flex items-center justify-center mb-6 mx-auto text-3xl font-bold">
+                3
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Diagnose & Quote</h3>
+              <p className="text-gray-200">
+                We assess the issue and provide an upfront, transparent quote before any work begins.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="text-center"
+            >
+              <div className="w-20 h-20 bg-cyan rounded-full flex items-center justify-center mb-6 mx-auto text-3xl font-bold">
+                4
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Fix & Clean</h3>
+              <p className="text-gray-200">
+                We complete the repair efficiently and clean up completely, leaving no trace behind.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-20 bg-pale-blue">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-ocean mb-4">What Our Customers Say</h2>
+            <p className="text-xl text-slate-text">Real reviews from real customers</p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white p-8 rounded-lg shadow-lg"
+              >
+                <div className="flex gap-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} size={20} className="text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-slate-text text-lg mb-6 leading-relaxed italic">
+                  "{testimonial.text}"
+                </p>
+                <div className="border-t pt-4">
+                  <p className="font-bold text-ocean text-lg">{testimonial.name}</p>
+                  <p className="text-sm text-gray-500">{testimonial.service}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <div className="inline-flex items-center gap-3 bg-cyan text-white px-8 py-4 rounded-lg font-bold text-xl">
+              <TrendingUp size={28} />
+              4.9/5 Average Rating from 500+ Reviews
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-ocean mb-4">Frequently Asked Questions</h2>
+            <p className="text-xl text-slate-text">Get answers to common plumbing questions</p>
+          </motion.div>
+
+          <div className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-pale-blue p-6 rounded-lg"
+            >
+              <h3 className="text-xl font-bold text-ocean mb-3">Do you offer emergency services?</h3>
+              <p className="text-slate-text leading-relaxed">
+                Yes! We're available 24/7 for emergency plumbing situations. Whether it's a burst pipe at 2 AM or a major leak on a holiday, we're here to help.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-pale-blue p-6 rounded-lg"
+            >
+              <h3 className="text-xl font-bold text-ocean mb-3">Are your plumbers licensed and insured?</h3>
+              <p className="text-slate-text leading-relaxed">
+                Absolutely. All our plumbers are fully licensed, insured, and bonded. We carry comprehensive liability insurance for your protection and peace of mind.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-pale-blue p-6 rounded-lg"
+            >
+              <h3 className="text-xl font-bold text-ocean mb-3">How quickly can you respond to an emergency?</h3>
+              <p className="text-slate-text leading-relaxed">
+                We aim to arrive within 60 minutes for emergency calls in our service area. For scheduled appointments, we offer same-day and next-day service.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-pale-blue p-6 rounded-lg"
+            >
+              <h3 className="text-xl font-bold text-ocean mb-3">Do you provide free estimates?</h3>
+              <p className="text-slate-text leading-relaxed">
+                Yes, we provide free, no-obligation estimates for all non-emergency work. For emergency repairs, we'll give you an upfront quote before starting work.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-pale-blue p-6 rounded-lg"
+            >
+              <h3 className="text-xl font-bold text-ocean mb-3">What payment methods do you accept?</h3>
+              <p className="text-slate-text leading-relaxed">
+                We accept cash, all major credit cards, debit cards, and mobile payments. Payment is due upon completion of the work.
               </p>
             </motion.div>
           </div>
@@ -398,7 +804,11 @@ export default function App() {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <h3 className="text-2xl font-bold mb-4">CITY PLUMBERS</h3>
-              <p className="text-gray-400">Professional plumbing services you can trust</p>
+              <p className="text-gray-400 mb-4">Professional plumbing services you can trust</p>
+              <div className="flex gap-4">
+                <Users className="text-cyan" size={24} />
+                <span className="text-gray-400">Licensed & Insured Professionals</span>
+              </div>
             </div>
             
             <div>
@@ -407,8 +817,14 @@ export default function App() {
                 <button onClick={() => scrollToSection('home')} className="block text-gray-400 hover:text-white transition">
                   Home
                 </button>
+                <button onClick={() => scrollToSection('about')} className="block text-gray-400 hover:text-white transition">
+                  About
+                </button>
                 <button onClick={() => scrollToSection('services')} className="block text-gray-400 hover:text-white transition">
                   Services
+                </button>
+                <button onClick={() => scrollToSection('testimonials')} className="block text-gray-400 hover:text-white transition">
+                  Testimonials
                 </button>
                 <button onClick={() => scrollToSection('contact')} className="block text-gray-400 hover:text-white transition">
                   Contact
@@ -421,7 +837,14 @@ export default function App() {
               <a href="tel:08023169274" className="text-2xl font-bold text-cyan hover:text-cyan-light transition block mb-4">
                 0802-316-9274
               </a>
-              <p className="text-gray-400 text-sm">Available 24/7 for emergencies</p>
+              <p className="text-gray-400 text-sm mb-4">Available 24/7 for emergencies</p>
+              <a 
+                href="https://wa.me/2348023169274"
+                className="inline-flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition"
+              >
+                <MessageCircle size={18} />
+                Chat on WhatsApp
+              </a>
             </div>
           </div>
           

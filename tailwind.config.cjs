@@ -1,4 +1,3 @@
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -9,36 +8,20 @@ module.exports = {
     extend: {
       colors: {
         ocean: {
-          DEFAULT: '#003d5c',
-          light: '#005580',
+          DEFAULT: '#0369a1',
+          dark: '#075985',
+          light: '#0ea5e9',
         },
-        leaf: {
-          DEFAULT: '#22c55e',
-          dark: '#16a34a',
+        cyan: {
+          DEFAULT: '#06b6d4',
+          dark: '#0891b2',
+          light: '#22d3ee',
         },
-        'slate-text': '#1e293b',
-      },
-    },
-  },
-  plugins: [],
-}
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {
-      colors: {
-        ocean: {
-          DEFAULT: '#0ea5e9',
-          dark: '#0284c7',
+        urgent: {
+          DEFAULT: '#dc2626',
+          dark: '#b91c1c',
         },
-        leaf: {
-          DEFAULT: '#22c55e',
-          dark: '#16a34a',
-        },
+        'pale-blue': '#f0f9ff',
         'slate-text': '#1e293b',
       },
     },

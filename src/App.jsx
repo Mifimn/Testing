@@ -5,15 +5,16 @@ import {
   Menu, 
   X, 
   Phone, 
-  Settings, 
-  Wheat, 
-  Package, 
-  MapPin, 
-  Clock,
+  Wrench, 
+  Droplet, 
+  AlertCircle,
+  CheckCircle,
+  DollarSign,
+  Award,
+  Shield,
   MessageCircle,
-  Facebook,
-  Instagram,
-  Fish
+  MapPin,
+  Clock
 } from 'lucide-react';
 import './App.css';
 
@@ -37,7 +38,7 @@ export default function App() {
             {/* Logo */}
             <div className="flex-shrink-0">
               <h1 className="text-xl sm:text-2xl font-bold text-ocean">
-                TJ FEED & FISHERIES
+                CITY PLUMBERS
               </h1>
             </div>
 
@@ -49,18 +50,18 @@ export default function App() {
               <button onClick={() => scrollToSection('services')} className="text-slate-text hover:text-ocean transition">
                 Services
               </button>
-              <button onClick={() => scrollToSection('facility')} className="text-slate-text hover:text-ocean transition">
-                Our Facility
+              <button onClick={() => scrollToSection('emergency')} className="text-slate-text hover:text-ocean transition">
+                Emergency
               </button>
               <button onClick={() => scrollToSection('contact')} className="text-slate-text hover:text-ocean transition">
                 Contact
               </button>
               <a 
-                href="tel:+2348012345678" 
-                className="bg-leaf text-white px-6 py-2 rounded-lg font-semibold hover:bg-leaf-dark transition flex items-center gap-2"
+                href="tel:08023169274" 
+                className="bg-urgent text-white px-6 py-2 rounded-lg font-semibold hover:bg-urgent-dark transition flex items-center gap-2"
               >
                 <Phone size={18} />
-                Call Now
+                24/7 Call Now
               </a>
             </div>
 
@@ -87,18 +88,18 @@ export default function App() {
                 <button onClick={() => scrollToSection('services')} className="text-left text-slate-text hover:text-ocean transition">
                   Services
                 </button>
-                <button onClick={() => scrollToSection('facility')} className="text-left text-slate-text hover:text-ocean transition">
-                  Our Facility
+                <button onClick={() => scrollToSection('emergency')} className="text-left text-slate-text hover:text-ocean transition">
+                  Emergency
                 </button>
                 <button onClick={() => scrollToSection('contact')} className="text-left text-slate-text hover:text-ocean transition">
                   Contact
                 </button>
                 <a 
-                  href="tel:+2348012345678" 
-                  className="bg-leaf text-white px-6 py-2 rounded-lg font-semibold hover:bg-leaf-dark transition flex items-center gap-2 justify-center"
+                  href="tel:08023169274" 
+                  className="bg-urgent text-white px-6 py-2 rounded-lg font-semibold hover:bg-urgent-dark transition flex items-center gap-2 justify-center"
                 >
                   <Phone size={18} />
-                  Call Now
+                  24/7 Call Now
                 </a>
               </div>
             </motion.div>
@@ -109,15 +110,15 @@ export default function App() {
       {/* Hero Section */}
       <section 
         id="home" 
-        className="relative h-screen flex items-center justify-center bg-gradient-to-br from-ocean-light to-ocean pt-16"
+        className="relative h-screen flex items-center justify-center bg-gradient-to-br from-ocean to-ocean-dark pt-16"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1565008576549-57569a49371d?w=1600)',
+          backgroundImage: 'url(https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1600)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundBlendMode: 'overlay'
         }}
       >
-        <div className="absolute inset-0 bg-ocean/80"></div>
+        <div className="absolute inset-0 bg-ocean/85"></div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
@@ -125,7 +126,7 @@ export default function App() {
             transition={{ duration: 0.8 }}
             className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 text-shadow"
           >
-            Premium Fish Feed Milling & Production in Ilorin
+            Fast, Reliable Plumbing Repairs in Your Area
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 30 }}
@@ -133,7 +134,7 @@ export default function App() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl sm:text-2xl text-gray-100 mb-8"
           >
-            The Hub for Aquaculture in Ilorin. We offer professional feed milling, raw materials, and fresh catfish sales directly from our ponds.
+            From leaky faucets to burst pipes, we fix it right the first time. Licensed, Insured, and always on time.
           </motion.p>
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -143,15 +144,15 @@ export default function App() {
           >
             <button 
               onClick={() => scrollToSection('contact')}
-              className="bg-leaf text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-leaf-dark transition shadow-lg"
+              className="bg-cyan text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-cyan-dark transition shadow-lg"
             >
-              Get Directions
+              Request Service
             </button>
             <button 
               onClick={() => scrollToSection('services')}
               className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-ocean transition shadow-lg"
             >
-              View Services
+              Our Services
             </button>
           </motion.div>
         </div>
@@ -168,13 +169,14 @@ export default function App() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl font-bold text-ocean mb-6">
-                Your Partner in Aquaculture Success
+                No Job Too Small, No Leak Too Big
               </h2>
               <p className="text-lg text-slate-text mb-6 leading-relaxed">
-                Located in Ilorin, TJ Feed and Fisheries is your full-cycle aquaculture hub—from producing the feed to rearing the fish. We combine industrial capacity with precision. Whether you need raw materials, custom crushing based on your specific formula, ready-made floating feed, or fresh catfish from our ponds, we're equipped to handle your needs.
+                We understand that plumbing issues can be stressful. That's why we offer transparent pricing and respectful service. We treat your home like our own—leaving no mess behind.
               </p>
-              <div className="inline-block bg-leaf text-white px-6 py-3 rounded-lg font-bold text-xl">
-                10+ Tons Daily Capacity
+              <div className="inline-flex items-center gap-3 bg-cyan text-white px-6 py-3 rounded-lg font-bold text-xl">
+                <CheckCircle size={28} />
+                100% Satisfaction Guarantee
               </div>
             </motion.div>
             <motion.div
@@ -184,7 +186,7 @@ export default function App() {
               transition={{ duration: 0.8 }}
               className="h-96 bg-gray-200 rounded-lg overflow-hidden shadow-xl"
               style={{
-                backgroundImage: 'url(https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=800)',
+                backgroundImage: 'url(https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
               }}
@@ -194,7 +196,7 @@ export default function App() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-gray-50">
+      <section id="services" className="py-20 bg-pale-blue">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -203,10 +205,10 @@ export default function App() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-ocean mb-4">Our Services</h2>
-            <p className="text-xl text-slate-text">Comprehensive solutions for your fish farming needs</p>
+            <p className="text-xl text-slate-text">Professional plumbing solutions for every need</p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Service Card 1 */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -215,12 +217,12 @@ export default function App() {
               transition={{ delay: 0.1 }}
               className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition"
             >
-              <div className="w-16 h-16 bg-ocean rounded-full flex items-center justify-center mb-6">
-                <Settings size={32} className="text-white" />
+              <div className="w-16 h-16 bg-urgent rounded-full flex items-center justify-center mb-6">
+                <AlertCircle size={32} className="text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-ocean mb-4">Custom Milling & Grinding</h3>
+              <h3 className="text-2xl font-bold text-ocean mb-4">Emergency Repairs</h3>
               <p className="text-slate-text leading-relaxed">
-                Bring your resources. Our operators weigh, grind, mix, and pelletize your formula to your exact specifications using industrial-grade machines.
+                Available 24/7 for burst pipes, severe clogs, and overflowing toilets. We get there fast.
               </p>
             </motion.div>
 
@@ -232,12 +234,12 @@ export default function App() {
               transition={{ delay: 0.2 }}
               className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition"
             >
-              <div className="w-16 h-16 bg-ocean rounded-full flex items-center justify-center mb-6">
-                <Wheat size={32} className="text-white" />
+              <div className="w-16 h-16 bg-cyan rounded-full flex items-center justify-center mb-6">
+                <Droplet size={32} className="text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-ocean mb-4">Raw Material Sales</h3>
+              <h3 className="text-2xl font-bold text-ocean mb-4">Leak Detection</h3>
               <p className="text-slate-text leading-relaxed">
-                Short on ingredients? We stock high-quality Maize, Soya Meal, Groundnut Cake, and Fish Meal available for direct purchase at our warehouse.
+                High water bill? We use advanced technology to find hidden leaks behind walls and under floors.
               </p>
             </motion.div>
 
@@ -250,36 +252,19 @@ export default function App() {
               className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition"
             >
               <div className="w-16 h-16 bg-ocean rounded-full flex items-center justify-center mb-6">
-                <Package size={32} className="text-white" />
+                <Wrench size={32} className="text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-ocean mb-4">TJ Brand Feed</h3>
+              <h3 className="text-2xl font-bold text-ocean mb-4">Installations</h3>
               <p className="text-slate-text leading-relaxed">
-                Don't have a formula? Buy our scientifically formulated TJ Brand Fish Feed. Available in Starter (2mm), Grower (4mm), and Finisher sizes.
-              </p>
-            </motion.div>
-
-            {/* Service Card 4 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition"
-            >
-              <div className="w-16 h-16 bg-ocean rounded-full flex items-center justify-center mb-6">
-                <Fish size={32} className="text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-ocean mb-4">Fresh Catfish Sales</h3>
-              <p className="text-slate-text leading-relaxed">
-                We rear healthy, fast-growing catfish. Available for purchase: Fingerlings for stocking, Juveniles, Table Size (dried or fresh), and Broodstock.
+                Professional installation for water heaters, new faucets, toilets, and shower systems.
               </p>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Facility Gallery Section */}
-      <section id="facility" className="py-20 bg-white">
+      {/* Why Choose Us Section */}
+      <section id="emergency" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -287,88 +272,121 @@ export default function App() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-ocean mb-4">Our Facility</h2>
-            <p className="text-xl text-slate-text">State-of-the-art equipment for premium quality feed</p>
+            <h2 className="text-4xl font-bold text-ocean mb-4">The Professional Difference</h2>
+            <p className="text-xl text-slate-text">Why customers trust us with their homes</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { title: 'Grinding Machine', img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600' },
-              { title: 'The Mixer', img: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600' },
-              { title: 'The Pelletizer', img: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600' },
-              { title: 'Finished Feed Bags', img: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600' },
-              { title: 'Concrete Fish Ponds', img: 'https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=600' },
-              { title: 'Harvesting Fresh Catfish', img: 'https://images.unsplash.com/photo-1544943910-4c1dc44aab44?w=600' },
-              { title: 'Loading Bay', img: 'https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=600' },
-              { title: 'Warehouse Interior', img: 'https://images.unsplash.com/photo-1553413077-190dd305871c?w=600' },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
-                className="relative h-64 bg-gray-200 rounded-lg overflow-hidden shadow-lg cursor-pointer"
-                style={{
-                  backgroundImage: `url(${item.img})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
-              >
-                <div className="absolute inset-0 bg-ocean/40 hover:bg-ocean/20 transition flex items-end">
-                  <div className="p-4 text-white font-semibold text-lg">
-                    {item.title}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Feature 1 */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-pale-blue p-8 rounded-lg shadow-lg text-center"
+            >
+              <div className="w-20 h-20 bg-cyan rounded-full flex items-center justify-center mb-6 mx-auto">
+                <DollarSign size={40} className="text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-ocean mb-4">Upfront Pricing</h3>
+              <p className="text-slate-text leading-relaxed">
+                No hidden fees. You'll know the cost before we start any work.
+              </p>
+            </motion.div>
+
+            {/* Feature 2 */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-pale-blue p-8 rounded-lg shadow-lg text-center"
+            >
+              <div className="w-20 h-20 bg-cyan rounded-full flex items-center justify-center mb-6 mx-auto">
+                <Award size={40} className="text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-ocean mb-4">Licensed Experts</h3>
+              <p className="text-slate-text leading-relaxed">
+                All our plumbers are certified professionals with years of experience.
+              </p>
+            </motion.div>
+
+            {/* Feature 3 */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="bg-pale-blue p-8 rounded-lg shadow-lg text-center"
+            >
+              <div className="w-20 h-20 bg-cyan rounded-full flex items-center justify-center mb-6 mx-auto">
+                <Shield size={40} className="text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-ocean mb-4">Clean Up Guarantee</h3>
+              <p className="text-slate-text leading-relaxed">
+                We wear shoe covers and leave your home cleaner than we found it.
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Location & Hours Section */}
-      <section id="contact" className="py-20 bg-ocean text-white">
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-ocean-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center"
           >
-            <h2 className="text-4xl font-bold mb-8">Visit Us Today</h2>
+            <h2 className="text-4xl font-bold mb-6">Get a Free Quote Today</h2>
+            <p className="text-2xl text-gray-200 mb-8">
+              Don't let a drip turn into a flood. Call us now.
+            </p>
             
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div className="mb-12">
+              <a 
+                href="tel:08023169274"
+                className="text-5xl sm:text-6xl font-bold text-cyan hover:text-cyan-light transition inline-block"
+              >
+                0802-316-9274
+              </a>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a 
+                href="tel:08023169274"
+                className="bg-urgent text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-urgent-dark transition shadow-lg flex items-center gap-2"
+              >
+                <Phone size={24} />
+                Call Now
+              </a>
+              <a 
+                href="https://wa.me/2348023169274"
+                className="bg-green-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-600 transition shadow-lg flex items-center gap-2"
+              >
+                <MessageCircle size={24} />
+                WhatsApp Chat
+              </a>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 mt-16 max-w-3xl mx-auto">
               <div className="flex items-center justify-center gap-4">
-                <Clock size={32} />
+                <Clock size={32} className="text-cyan" />
                 <div className="text-left">
-                  <p className="text-xl font-semibold">Operating Hours</p>
-                  <p className="text-gray-200">Monday - Saturday: 8:00 AM - 6:00 PM</p>
-                  <p className="text-gray-300 text-sm">(No Milling on Sundays)</p>
+                  <p className="text-xl font-semibold">Available 24/7</p>
+                  <p className="text-gray-300">Emergency services anytime</p>
                 </div>
               </div>
               
               <div className="flex items-center justify-center gap-4">
-                <MapPin size={32} />
+                <MapPin size={32} className="text-cyan" />
                 <div className="text-left">
-                  <p className="text-xl font-semibold">Location</p>
-                  <p className="text-gray-200">Oko Erin, Ilorin</p>
-                  <p className="text-gray-200">Kwara State, Nigeria</p>
+                  <p className="text-xl font-semibold">Serving Your Area</p>
+                  <p className="text-gray-300">Fast response times</p>
                 </div>
               </div>
-            </div>
-
-            {/* Map Placeholder */}
-            <div className="bg-gray-300 h-96 rounded-lg overflow-hidden shadow-xl">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.1234567890123!2d4.5!3d8.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMzAnMDAuMCJOIDTCsDMwJzAwLjAiRQ!5e0!3m2!1sen!2sng!4v1234567890123!5m2!1sen!2sng"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                title="TJ Feed & Fisheries Location"
-              ></iframe>
             </div>
           </motion.div>
         </div>
@@ -379,8 +397,8 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-2xl font-bold mb-4">TJ FEED & FISHERIES</h3>
-              <p className="text-gray-400">Premium fish feed solutions for Nigerian farmers</p>
+              <h3 className="text-2xl font-bold mb-4">CITY PLUMBERS</h3>
+              <p className="text-gray-400">Professional plumbing services you can trust</p>
             </div>
             
             <div>
@@ -399,31 +417,24 @@ export default function App() {
             </div>
             
             <div>
-              <h4 className="text-lg font-semibold mb-4">Connect With Us</h4>
-              <div className="flex gap-4">
-                <a href="https://wa.me/2348012345678" className="w-10 h-10 bg-leaf rounded-full flex items-center justify-center hover:bg-leaf-dark transition">
-                  <MessageCircle size={20} />
-                </a>
-                <a href="https://instagram.com" className="w-10 h-10 bg-leaf rounded-full flex items-center justify-center hover:bg-leaf-dark transition">
-                  <Instagram size={20} />
-                </a>
-                <a href="https://facebook.com" className="w-10 h-10 bg-leaf rounded-full flex items-center justify-center hover:bg-leaf-dark transition">
-                  <Facebook size={20} />
-                </a>
-              </div>
+              <h4 className="text-lg font-semibold mb-4">Emergency Contact</h4>
+              <a href="tel:08023169274" className="text-2xl font-bold text-cyan hover:text-cyan-light transition block mb-4">
+                0802-316-9274
+              </a>
+              <p className="text-gray-400 text-sm">Available 24/7 for emergencies</p>
             </div>
           </div>
           
           <div className="border-t border-gray-700 pt-8 text-center text-gray-400">
-            <p className="mb-2">© 2025 TJ Feed and Fisheries. All rights reserved.</p>
-            <p className="text-sm">Website Developed by ~mifimn (SIWES Project)</p>
+            <p className="mb-2">© 2025 City Plumbers. All rights reserved.</p>
+            <p className="text-sm">Website Developed by [Your Name]</p>
           </div>
         </div>
       </footer>
 
       {/* WhatsApp Float Button */}
       <a
-        href="https://wa.me/2348012345678"
+        href="https://wa.me/2348023169274"
         className="fixed bottom-8 right-8 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-all hover:scale-110 z-50"
         aria-label="Chat on WhatsApp"
       >

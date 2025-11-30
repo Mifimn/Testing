@@ -21,38 +21,38 @@ const SERVICES = [
     id: 1,
     title: "Termite Defense",
     desc: "Subterranean termite elimination using non-invasive baiting systems.",
-    image: "https://images.unsplash.com/photo-1628153303186-b4703770428d?auto=format&fit=crop&q=80&w=600",
+    image: "https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&q=80&w=600",
     icon: <Bug className="w-6 h-6" />
   },
   {
     id: 2,
     title: "Rodent Control",
     desc: "Complete exclusion services to seal entry points and remove nests.",
-    image: "https://images.unsplash.com/photo-1452570053594-1b985d6ea890?auto=format&fit=crop&q=80&w=600",
+    image: "https://images.unsplash.com/photo-1628595351029-c2bf17511435?auto=format&fit=crop&q=80&w=600",
     icon: <Mouse className="w-6 h-6" />
   },
   {
     id: 3,
     title: "Viral Disinfection",
     desc: "Hospital-grade misting to neutralize 99.9% of bacteria and viruses.",
-    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=600",
+    image: "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&q=80&w=600",
     icon: <SprayCan className="w-6 h-6" />
   },
   {
     id: 4,
     title: "Bed Bug Heat",
     desc: "Chemical-free thermal remediation. One treatment, zero bugs.",
-    image: "https://images.unsplash.com/photo-1624558265017-d2a937c02b3c?auto=format&fit=crop&q=80&w=600",
+    image: "https://images.unsplash.com/photo-1556912173-46c336c7fd55?auto=format&fit=crop&q=80&w=600",
     icon: <Home className="w-6 h-6" />
   }
 ];
 
 const PEST_LIBRARY = [
-  { name: "Termites", risk: "Structural Damage", img: "https://images.unsplash.com/photo-1619623062313-97992d9d9633?auto=format&fit=crop&q=80&w=400" },
-  { name: "Cockroaches", risk: "Disease Vector", img: "https://images.unsplash.com/photo-1623945447225-78e7c1eb8c45?auto=format&fit=crop&q=80&w=400" },
-  { name: "Rodents", risk: "Fire Hazard", img: "https://images.unsplash.com/photo-1541364983171-a8ba01e95cfc?auto=format&fit=crop&q=80&w=400" },
-  { name: "Mosquitoes", risk: "Malaria Risk", img: "https://images.unsplash.com/photo-1604168612705-7f37803692d4?auto=format&fit=crop&q=80&w=400" },
-  { name: "Ants", risk: "Food Contamination", img: "https://images.unsplash.com/photo-1596567181675-5789d35fde2b?auto=format&fit=crop&q=80&w=400" },
+  { name: "Termites", risk: "Structural Damage", img: "https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&q=80&w=400" },
+  { name: "Cockroaches", risk: "Disease Vector", img: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&q=80&w=400" },
+  { name: "Rodents", risk: "Fire Hazard", img: "https://images.unsplash.com/photo-1628595351029-c2bf17511435?auto=format&fit=crop&q=80&w=400" },
+  { name: "Mosquitoes", risk: "Malaria Risk", img: "https://images.unsplash.com/photo-1595434091143-b375ced5fe5c?auto=format&fit=crop&q=80&w=400" },
+  { name: "Ants", risk: "Food Contamination", img: "https://images.unsplash.com/photo-1530023367847-a683933f4172?auto=format&fit=crop&q=80&w=400" },
 ];
 
 const REVIEWS = [
@@ -60,19 +60,19 @@ const REVIEWS = [
     name: "Adewale B.", 
     role: "Hotel Manager", 
     text: "Dewklin saved our business license. The cockroach infestation was gone in 48 hours.",
-    avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200"
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200"
   },
   { 
     name: "Chioma K.", 
     role: "Homeowner", 
     text: "Professional, discreet, and very effective. I haven't seen a single rat since their visit.",
-    avatar: "https://images.unsplash.com/photo-1573496359-136d475583dc?auto=format&fit=crop&q=80&w=200" 
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200" 
   },
   { 
     name: "David O.", 
     role: "Real Estate Dev", 
     text: "We use Dewklin for all our pre-construction termite treatments. Zero complaints.",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200" 
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200" 
   },
 ];
 
@@ -155,7 +155,7 @@ export default function App() {
       <section id="home" className="relative h-screen flex items-center overflow-hidden bg-black">
         <motion.div style={{ scale: heroScale }} className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?auto=format&fit=crop&q=80&w=1920" 
+            src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80&w=1920" 
             alt="Pest Control" 
             className="w-full h-full object-cover opacity-60 grayscale" 
           />
@@ -256,7 +256,7 @@ export default function App() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white"
               >
-                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800" alt="Worker" className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700" />
+                <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80&w=800" alt="Worker" className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700" />
               </motion.div>
               <div className="absolute -bottom-6 -right-6 z-20 bg-red-600 text-white p-8 rounded-xl shadow-xl hidden md:block">
                 <Shield size={32} className="mb-2" />
@@ -340,7 +340,7 @@ export default function App() {
       {/* Contact Section with Background Image */}
       <section id="contact" className="relative py-24 bg-black flex items-center">
         <div className="absolute inset-0 z-0">
-          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1920" alt="Office" className="w-full h-full object-cover opacity-30 grayscale" />
+          <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=1920" alt="Office" className="w-full h-full object-cover opacity-30 grayscale" />
           <div className="absolute inset-0 bg-gradient-to-l from-black via-black/90 to-transparent" />
         </div>
 
